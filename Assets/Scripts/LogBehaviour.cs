@@ -13,6 +13,8 @@ public class LogBehaviour : MonoBehaviour
 
     private Rigidbody rigidBodyComponent;
 
+    TreeMiddleman treeCountNotifier;
+
     bool QueueLaunch = false;
     Vector3 AxeHitPosition;
 
@@ -20,12 +22,7 @@ public class LogBehaviour : MonoBehaviour
     void Start()
     {
         rigidBodyComponent = GetComponent<Rigidbody>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        treeCountNotifier = GetComponentInParent<TreeMiddleman>();
     }
 
      void OnTriggerStay(Collider treeCollider)
@@ -77,6 +74,8 @@ public class LogBehaviour : MonoBehaviour
             // Freeing hit, launch self+log  
             QueueLaunch = true;
             AxeHitPosition = otherBody.position;
+            //Inform the manager that a new tree was chopped down
+            treeCountNotifier.Chop();
         }
         else if(health < 0) {
 

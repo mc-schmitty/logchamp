@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WinCon : MonoBehaviour
 {
@@ -25,6 +26,11 @@ public class WinCon : MonoBehaviour
     public GameObject defeat;
     public PlayermodelManager player;
 
+    Text timeText;
+    int seconds;
+    int minutes;
+    int milliseconds;
+
     bool gameOver = false;
 
     // Start is called before the first frame update
@@ -47,6 +53,7 @@ public class WinCon : MonoBehaviour
         {
             timeLeft = 1;
         }
+        timeText = neutral.GetComponentInChildren<Text>();
         
     }
 
@@ -55,6 +62,11 @@ public class WinCon : MonoBehaviour
         if (timer)
         {
             timeLeft -= Time.deltaTime;
+            seconds = (int)timeLeft;
+            milliseconds = (int)((timeLeft - seconds) * 1000);
+            minutes = seconds / 60;
+            seconds = seconds % 60;
+            timeText.text = string.Format("{0:00}:{1:00}.{2:000}", minutes, seconds, milliseconds);
             if (timeLeft <= 0)
             {
                 lose();

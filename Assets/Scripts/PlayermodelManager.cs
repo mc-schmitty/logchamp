@@ -12,12 +12,6 @@ public class PlayermodelManager : MonoBehaviour
         iFrames = 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
         //Debug.Log(iFrames);
@@ -32,12 +26,14 @@ public class PlayermodelManager : MonoBehaviour
         }
     }
 
-    private void ExplodeAll() 
+    public void ExplodeAll() 
     {
         Playermodel[] pList = gameObject.GetComponentsInChildren<Playermodel>();
         for(int n=0; n < pList.Length; n++) {
             pList[n].Explode();
         }
         GetComponentInParent<Player>().Die();
+        WinCon _winCon = GameObject.FindObjectOfType<WinCon>();
+        _winCon.PlayerDeath();
     }
 }

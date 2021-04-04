@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\CabinManager.cs" />
      <Compile Include="Assets\Scripts\CollisionSetup.cs" />
      <Compile Include="Assets\Scripts\Float.cs" />
+     <Compile Include="Assets\Scripts\LevelEndScripts.cs" />
      <Compile Include="Assets\Scripts\LogBehaviour.cs" />
      <Compile Include="Assets\Scripts\MenuTest.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />

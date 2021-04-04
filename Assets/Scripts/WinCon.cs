@@ -12,9 +12,20 @@ public class WinCon : MonoBehaviour
     //These win cons are tracked by other managers
     public bool targets;
     public bool trees;
+    public bool timer;
+    public double timeLimit;
 
     bool targetsDone = false;
     bool treesDone = false;
+    double timeLeft;
+
+    //I'm working with the canvas GameObjects rather than the compoenents here
+    public GameObject neutral;
+    public GameObject victory;
+    public GameObject defeat;
+    public PlayermodelManager player;
+
+    bool gameOver = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +39,28 @@ public class WinCon : MonoBehaviour
         {
             treesDone = true;
         }
+        if (timer)
+        {
+            timeLeft = timeLimit;
+        }
+        else
+        {
+            timeLeft = 1;
+        }
+        
+    }
+
+    void Update()
+    {
+        if (timer)
+        {
+            timeLeft -= Time.deltaTime;
+            if (timeLeft <= 0)
+            {
+                lose();
+            }
+        }
+
     }
 
     public void CabinBuilt()
@@ -55,16 +88,33 @@ public class WinCon : MonoBehaviour
         }
     }
 
+    public void PlayerDeath()
+    {
+        lose();
+    }
+
     void winCheck()
     {
-        if (completedCabins == cabins && treesDone && targetsDone)
+        if (completedCabins == cabins && treesDone && targetsDone && !gameOver)
         {
+            timer = false;
+            gameOver = true;
+            neutral.SetActive(false);
+            victory.SetActive(true);
             UnityEngine.Debug.Log("You win!");
         }
     }
 
     void lose()
     {
+        if (!gameOver)
+        {
+            gameOver = true;
+            player.ExplodeAll();
+            neutral.SetActive(false);
+            defeat.SetActive(true);
+            UnityEngine.Debug.Log("You lose!");
+        }
 
     }
 }

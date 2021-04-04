@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WinCon : MonoBehaviour
 {
@@ -12,9 +13,25 @@ public class WinCon : MonoBehaviour
     //These win cons are tracked by other managers
     public bool targets;
     public bool trees;
+    public bool timer;
+    public double timeLimit;
 
     bool targetsDone = false;
     bool treesDone = false;
+    double timeLeft;
+
+    //I'm working with the canvas GameObjects rather than the compoenents here
+    public GameObject neutral;
+    public GameObject victory;
+    public GameObject defeat;
+    public PlayermodelManager player;
+
+    Text timeText;
+    int seconds;
+    int minutes;
+    int milliseconds;
+
+    bool gameOver = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +45,34 @@ public class WinCon : MonoBehaviour
         {
             treesDone = true;
         }
+        if (timer)
+        {
+            timeLeft = timeLimit;
+        }
+        else
+        {
+            timeLeft = 1;
+        }
+        timeText = neutral.GetComponentInChildren<Text>();
+        
+    }
+
+    void Update()
+    {
+        if (timer)
+        {
+            timeLeft -= Time.deltaTime;
+            seconds = (int)timeLeft;
+            milliseconds = (int)((timeLeft - seconds) * 1000);
+            minutes = seconds / 60;
+            seconds = seconds % 60;
+            timeText.text = string.Format("{0:00}:{1:00}.{2:000}", minutes, seconds, milliseconds);
+            if (timeLeft <= 0)
+            {
+                lose();
+            }
+        }
+
     }
 
     public void CabinBuilt()
@@ -55,16 +100,33 @@ public class WinCon : MonoBehaviour
         }
     }
 
+    public void PlayerDeath()
+    {
+        lose();
+    }
+
     void winCheck()
     {
-        if (completedCabins == cabins && treesDone && targetsDone)
+        if (completedCabins == cabins && treesDone && targetsDone && !gameOver)
         {
+            timer = false;
+            gameOver = true;
+            neutral.SetActive(false);
+            victory.SetActive(true);
             UnityEngine.Debug.Log("You win!");
         }
     }
 
     void lose()
     {
+        if (!gameOver)
+        {
+            gameOver = true;
+            player.ExplodeAll();
+            neutral.SetActive(false);
+            defeat.SetActive(true);
+            UnityEngine.Debug.Log("You lose!");
+        }
 
     }
 }

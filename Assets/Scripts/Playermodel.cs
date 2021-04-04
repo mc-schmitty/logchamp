@@ -15,12 +15,6 @@ public class Playermodel : MonoBehaviour
         randRot = Random.rotation;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void FixedUpdate() {
         if(doExplode)
             transform.SetPositionAndRotation(transform.position + randPos, transform.rotation * randRot);

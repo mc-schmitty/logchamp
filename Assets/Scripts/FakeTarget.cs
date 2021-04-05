@@ -30,6 +30,8 @@ public class FakeTarget : MonoBehaviour
 
     public void dropFake() {
         dropframes = 60;
-        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        Rigidbody r = GetComponent<Rigidbody>();
+        r.constraints = RigidbodyConstraints.None;
+        r.AddForce(new Vector3(0, 20, -4), ForceMode.VelocityChange);
     }
 }

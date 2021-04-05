@@ -881,8 +881,9 @@ GameObject:
   - component: {fileID: 5479077459272546639}
   - component: {fileID: 8988552838461634360}
   - component: {fileID: 7305914700930916116}
+  - component: {fileID: 7580367478141467574}
   m_Layer: 0
-  m_Name: Hammer Frame (2)
+  m_Name: Hammer_Frame2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -973,3 +974,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.6139088, y: 5.284758, z: 3.4575284}
   m_Center: {x: 0.8069544, y: -0.29746556, z: 0.0038172007}
+--- !u!114 &7580367478141467574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8877864175270947045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ebea7490c4ccd4186f3533cce68f55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

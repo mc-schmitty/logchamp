@@ -43,16 +43,28 @@ public class BossScript : MonoBehaviour
                 GetComponentInChildren<TruckBehaviour>().Drive();
                 print("Driving truck");
                 break;
-            case 640:
+            case 580:
                 GameObject.Destroy(poordude);
                 print("Killed blue guy");
                 break;
-            case 730:
+            case 641:
                 logperatve.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+                print("Log Operative Unleashed");
                 break;
-            case 1000:
+            case 800:
+                GetComponentInChildren<Conveyor>().activate();
+                print("Start extending the conveyor");
+                break;
+            case 960:
                 player.constraints = RigidbodyConstraints.FreezeRotation;
                 print("Unfroze Player");
+                break;
+            case 1020:
+                HammerManager[] h = GetComponentsInChildren<HammerManager>();
+                for(int n = 0; n < h.Length; n++){
+                    h[n].raiseUp();
+                }
+                print("Hammers Raised");
                 break;
             default:
                 print(frame);

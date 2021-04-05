@@ -173,7 +173,7 @@ BoxCollider:
   m_GameObject: {fileID: 1708190429144931588}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2.6139088, y: 5.284758, z: 3.4575284}
   m_Center: {x: 0.8069544, y: -0.29746556, z: 0.0038172007}
@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 3583085512531028350}
   m_Layer: 0
   m_Name: Hammerhead
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

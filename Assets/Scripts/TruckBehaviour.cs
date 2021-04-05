@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TruckBehaviour : MonoBehaviour
 {
-    private bool isCrashed;
+    [SerializeField] private bool isCrashed;
     [SerializeField] private float speed;
 
     // Start is called before the first frame update
@@ -33,8 +33,11 @@ public class TruckBehaviour : MonoBehaviour
     // Sink truck into ground
     private void Crash() {
         isCrashed = true;
-        Vector3 pos = transform.position;
-        transform.position.Set(pos.x, pos.y-5, pos.z);
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        GetComponent<BoxCollider>().enabled = false;
+        //Vector3 pos = transform.position;
+        //transform.position.Set(pos.x, (pos.y)-6, pos.z);
+        transform.Translate(0, -6f, 0);
+        
     }
 }

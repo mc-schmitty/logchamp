@@ -113,6 +113,7 @@ public class WinCon : MonoBehaviour
             gameOver = true;
             neutral.SetActive(false);
             victory.SetActive(true);
+            player.iFrames = 2147483647;    // Player invul for MAX_INT frames lol
             UnityEngine.Debug.Log("You win!");
         }
     }

@@ -80,7 +80,12 @@ public class LogBehaviour : MonoBehaviour
         else if(health < 0) {
 
             if(otherBody.CompareTag("Player")) {
-                rigidBodyComponent.velocity = new Vector3(rigidBodyComponent.velocity.x, 0, -(rigidBodyComponent.velocity.z)) * ReflectSpeed;
+                //rigidBodyComponent.velocity = new Vector3(rigidBodyComponent.velocity.x, 0, -(rigidBodyComponent.velocity.z)) * ReflectSpeed;
+                // reflect now same as launch
+                Vector3 launchForceVec = rigidBodyComponent.position - AxeHitPosition;
+                launchForceVec.y = 0;
+                rigidBodyComponent.velocity = launchForceVec.normalized * rigidBodyComponent.velocity.magnitude * ReflectSpeed;
+                
             }
             else if(rigidBodyComponent.constraints != RigidbodyConstraints.FreezeAll) {
                 Destroy(gameObject);

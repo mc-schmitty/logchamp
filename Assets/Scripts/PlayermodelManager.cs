@@ -5,17 +5,34 @@ using UnityEngine;
 public class PlayermodelManager : MonoBehaviour
 {
     public int iFrames;
+    private bool isSwing;
 
     // Start is called before the first frame update
     void Start()
     {
         iFrames = 0;
+        isSwing = false;
     }
 
     private void FixedUpdate()
     {
         //Debug.Log(iFrames);
         iFrames = Mathf.Max(iFrames-1, 0);
+
+        // Swing axe if true, otherwise update and return axe to regular position
+        if(isSwing) {
+            transform.Rotate(0, -8, 0);
+            //isSwing = false;
+
+            // Check if past rotation
+            print(transform.rotation.eulerAngles.y);
+            if(transform.rotation.eulerAngles.y <= 240)
+                isSwing = false;
+        }
+        else if(transform.rotation.eulerAngles.y >= 232 ) {
+            print(transform.rotation.eulerAngles.y);
+            transform.Rotate(0, 1.5f, 0);
+        }
     }
 
     private void OnTriggerStay(Collider other) {
@@ -24,6 +41,11 @@ public class PlayermodelManager : MonoBehaviour
             //Debug.Log("Exploding rn");
             this.ExplodeAll();
         }
+    }
+
+    public void SwingAxe()
+    {
+        isSwing = true;
     }
 
     public void ExplodeAll() 

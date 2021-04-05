@@ -10,18 +10,13 @@ public class CabinManager : MonoBehaviour
     private bool isUpgrade = false;
     GameObject prevObj = null;
     public WinCon winObject;
+
     // Start is called before the first frame update
     void Start()
     {
         cabinVersion = 0;
         //Defines the cabin index at which we notify the win con
         maxCabin = cabinPrefabs.Length;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void FixedUpdate()

@@ -7,11 +7,15 @@ public class PlayermodelManager : MonoBehaviour
     public int iFrames;
     private bool isSwing;
 
+    AudioSource DeathSFX;
+    bool exploded = false;
+
     // Start is called before the first frame update
     void Start()
     {
         iFrames = 0;
         isSwing = false;
+        DeathSFX = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -37,9 +41,10 @@ public class PlayermodelManager : MonoBehaviour
 
     private void OnTriggerStay(Collider other) {
         //Debug.Log("Collision!");
-        if(other.CompareTag("Hazard") && iFrames == 0 && other.GetComponent<Rigidbody>().velocity.magnitude > 2.5f) {
+        if(other.CompareTag("Hazard") && iFrames == 0 && other.GetComponent<Rigidbody>().velocity.magnitude > 1.5f && !exploded) {
             //Debug.Log("Exploding rn");
             this.ExplodeAll();
+            exploded = true;
         }
     }
 
@@ -56,6 +61,7 @@ public class PlayermodelManager : MonoBehaviour
         }
         GetComponentInParent<Player>().Die();
         WinCon _winCon = GameObject.FindObjectOfType<WinCon>();
+        DeathSFX.Play();
         _winCon.PlayerDeath();
     }
 }

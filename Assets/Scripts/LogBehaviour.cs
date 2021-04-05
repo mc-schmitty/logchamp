@@ -18,11 +18,15 @@ public class LogBehaviour : MonoBehaviour
     bool QueueLaunch = false;
     Vector3 AxeHitPosition;
 
+    AudioSource sfx;
+
     // Start is called before the first frame update
     void Start()
     {
         rigidBodyComponent = GetComponent<Rigidbody>();
         treeCountNotifier = GetComponentInParent<TreeMiddleman>();
+        sfx = GetComponent<AudioSource>();
+        sfx.pitch = (Random.Range(0.5f, 1.2f));
     }
 
      void OnTriggerStay(Collider treeCollider)
@@ -78,6 +82,7 @@ public class LogBehaviour : MonoBehaviour
             AxeHitPosition = otherBody.position;
             //Inform the manager that a new tree was chopped down
             treeCountNotifier.Chop();
+            sfx.Play();
         }
         else if(health < 0) {
 

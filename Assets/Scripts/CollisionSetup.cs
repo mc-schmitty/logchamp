@@ -8,6 +8,7 @@ public class CollisionSetup : MonoBehaviour
     void Start()
     {
         Physics.IgnoreLayerCollision(8, 9, true);
+        Physics.IgnoreLayerCollision(10, 10, true);
     }
 
     // Update is called once per frame

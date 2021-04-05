@@ -47,7 +47,8 @@ public class LogBehaviour : MonoBehaviour
             QueueLaunch = false;
             //unfreeze tree
             rigidBodyComponent.constraints = RigidbodyConstraints.FreezePositionY;
-            logTop.constraints = RigidbodyConstraints.None;
+            if(logTop)
+                logTop.constraints = RigidbodyConstraints.None;
 
 
             //force bottom part of tree
@@ -57,7 +58,8 @@ public class LogBehaviour : MonoBehaviour
 
             rigidBodyComponent.AddForce(launchForceVec, ForceMode.VelocityChange);
             rigidBodyComponent.AddTorque(Vector3.Cross(Vector3.up,launchForceVec), ForceMode.VelocityChange);
-            logTop.AddForce(-launchForceVec, ForceMode.Impulse);
+            if(logTop)
+                logTop.AddForce(-launchForceVec, ForceMode.Impulse);
         }
 
         

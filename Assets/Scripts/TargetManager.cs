@@ -30,5 +30,9 @@ public class TargetManager : MonoBehaviour
             Debug.Log("Team "+team+"'s targets have all been destroyed!");
             winObject.targetUpdate(true);
         }
+        else if(teamHeads[team] == 0 && team == 0) {
+            Debug.Log("Team "+team+"'s targets have all been destroyed!");
+            winObject.targetUpdate(false);
+        }
     }
 }

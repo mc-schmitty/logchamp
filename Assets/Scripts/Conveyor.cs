@@ -69,7 +69,11 @@ public class Conveyor : MonoBehaviour
 
     private void Shoot() {
         if(readyLog != null) {
-            readyLog.GetComponent<Rigidbody>().AddForce(readyDir, ForceMode.VelocityChange);
+            Rigidbody r = readyLog.GetComponent<Rigidbody>();
+            r.constraints = RigidbodyConstraints.FreezePositionY;
+            r.AddForce(readyDir, ForceMode.VelocityChange);
+            r.AddTorque(Vector3.Cross(Vector3.up, readyDir), ForceMode.VelocityChange);
+
         }
 
         if(queueLog != null) {

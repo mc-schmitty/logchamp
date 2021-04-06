@@ -2523,6 +2523,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4977150746736323286, guid: d4fd7b789890dfe45acf3f6590feff18,
+        type: 3}
+      propertyPath: nextLevel
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5841746989018076124, guid: d4fd7b789890dfe45acf3f6590feff18,
         type: 3}
       propertyPath: trees

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 656309395980427000}
   m_Layer: 0
   m_Name: Hammer
-  m_TagString: Untagged
+  m_TagString: Cabin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
   - {fileID: 6286078762954326064, guid: 036cd56243032c443a649de9cef6b91d, type: 3}
   - {fileID: 1708190429144931588, guid: abb55b99cc4fc3e44a483fefa9b0d017, type: 3}
   hammerVersion: 0
-  winObject: {fileID: 0}
+  bossObject: {fileID: 0}
 --- !u!1001 &7705535561464103852
 PrefabInstance:
   m_ObjectHideFlags: 0

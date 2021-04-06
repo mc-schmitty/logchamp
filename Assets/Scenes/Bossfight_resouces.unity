@@ -233,6 +233,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 808437948}
     m_Modifications:
+    - target: {fileID: 656309395980427000, guid: 2fdfb7a79808162468368ed4132cfca0,
+        type: 3}
+      propertyPath: bossObject
+      value: 
+      objectReference: {fileID: 808437949}
     - target: {fileID: 7705535560348460234, guid: 2fdfb7a79808162468368ed4132cfca0,
         type: 3}
       propertyPath: m_RootOrder
@@ -2181,6 +2186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76ee2622edfd8f4caa39301d771e8f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hammers: 0
   player: {fileID: 528701445}
   poordude: {fileID: 292719136}
   logperatve: {fileID: 2094425056}
@@ -5048,6 +5054,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 808437948}
     m_Modifications:
+    - target: {fileID: 1720882763875157506, guid: 14a06c440fbe3da4ca2b3df23710caf0,
+        type: 3}
+      propertyPath: nodes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720882763875157506, guid: 14a06c440fbe3da4ca2b3df23710caf0,
+        type: 3}
+      propertyPath: nodes.Array.data[0]
+      value: 
+      objectReference: {fileID: 648706931}
+    - target: {fileID: 1720882763875157506, guid: 14a06c440fbe3da4ca2b3df23710caf0,
+        type: 3}
+      propertyPath: nodes.Array.data[1]
+      value: 
+      objectReference: {fileID: 1974349812}
+    - target: {fileID: 1720882763875157506, guid: 14a06c440fbe3da4ca2b3df23710caf0,
+        type: 3}
+      propertyPath: nodes.Array.data[2]
+      value: 
+      objectReference: {fileID: 360495095}
+    - target: {fileID: 5065388570705788950, guid: 14a06c440fbe3da4ca2b3df23710caf0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5065388570953353446, guid: 14a06c440fbe3da4ca2b3df23710caf0,
         type: 3}
       propertyPath: m_Name
@@ -5240,6 +5271,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 808437948}
     m_Modifications:
+    - target: {fileID: 656309395980427000, guid: 2fdfb7a79808162468368ed4132cfca0,
+        type: 3}
+      propertyPath: bossObject
+      value: 
+      objectReference: {fileID: 808437949}
     - target: {fileID: 7705535560348460234, guid: 2fdfb7a79808162468368ed4132cfca0,
         type: 3}
       propertyPath: m_RootOrder

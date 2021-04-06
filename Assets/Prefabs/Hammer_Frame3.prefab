@@ -805,7 +805,7 @@ GameObject:
   - component: {fileID: -6960986041430489592}
   m_Layer: 0
   m_Name: Hammer_Frame3
-  m_TagString: Untagged
+  m_TagString: Cabin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

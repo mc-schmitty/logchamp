@@ -103,7 +103,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 358323745019440578}
-  - component: {fileID: 2257228862096283361}
   m_Layer: 0
   m_Name: Room Setup
   m_TagString: GameController
@@ -125,18 +124,6 @@ Transform:
   m_Father: {fileID: 7824752265971893444}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2257228862096283361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3382272155872607359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381c20aa7874546428c3a8c8887e30b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3756875436574945362
 GameObject:
   m_ObjectHideFlags: 0

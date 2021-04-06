@@ -68,11 +68,11 @@ public class Conveyor : MonoBehaviour
     }
 
     private void Shoot() {
-        if(!readyLog) {
+        if(readyLog != null) {
             readyLog.GetComponent<Rigidbody>().AddForce(readyDir, ForceMode.VelocityChange);
         }
 
-        if(!queueLog) {
+        if(queueLog != null) {
             readyLog = queueLog;
             readyDir = queueDir;
             readyLog.transform.Translate(3, 0, 0);

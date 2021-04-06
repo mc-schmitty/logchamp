@@ -37,17 +37,18 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AxeCollisionCheck.cs" />
+     <Compile Include="Assets\Scripts\BossScript.cs" />
      <Compile Include="Assets\Scripts\CabinCode.cs" />
      <Compile Include="Assets\Scripts\CabinManager.cs" />
      <Compile Include="Assets\Scripts\CollisionSetup.cs" />
      <Compile Include="Assets\Scripts\Conveyor.cs" />
+     <Compile Include="Assets\Scripts\FakeTarget.cs" />
      <Compile Include="Assets\Scripts\Float.cs" />
      <Compile Include="Assets\Scripts\HammerCode.cs" />
      <Compile Include="Assets\Scripts\HammerManager.cs" />
      <Compile Include="Assets\Scripts\LevelEndScripts.cs" />
      <Compile Include="Assets\Scripts\LogBehaviour.cs" />
      <Compile Include="Assets\Scripts\MenuTest.cs" />
-     <Compile Include="Assets\Scripts\ObjectiveSpectators.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Playermodel.cs" />
      <Compile Include="Assets\Scripts\PlayermodelManager.cs" />
@@ -56,6 +57,7 @@
      <Compile Include="Assets\Scripts\TargetManager.cs" />
      <Compile Include="Assets\Scripts\TreeManager.cs" />
      <Compile Include="Assets\Scripts\TreeMiddleman.cs" />
+     <Compile Include="Assets\Scripts\TruckBehaviour.cs" />
      <Compile Include="Assets\Scripts\WinCon.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />

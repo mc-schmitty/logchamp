@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -112,10 +112,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 679, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 677, y: 492}
+  m_MaxSize: {x: 14001, y: 14042}
   vertical: 0
-  controlID: 44
+  controlID: 108
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -137,10 +137,10 @@ MonoBehaviour:
     y: 0
     width: 1444
     height: 947
-  m_MinSize: {x: 403, y: 492}
+  m_MinSize: {x: 402, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 45
+  controlID: 109
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -162,10 +162,10 @@ MonoBehaviour:
     y: 0
     width: 1444
     height: 626
-  m_MinSize: {x: 403, y: 221}
-  m_MaxSize: {x: 8003, y: 4021}
+  m_MinSize: {x: 402, y: 221}
+  m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 46
+  controlID: 110
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_UseMipMap: 0
   m_VSyncEnabled: 0
   m_Gizmos: 0
-  m_Stats: 0
+  m_Stats: 1
   m_SelectedSizes: 05000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
@@ -395,9 +395,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 6e6b0000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 649ff9ff88b1f9ff50c5f9ffb6c5f9ffdc52fffffebcffffc2c3ffff88c5ffffa8c5ffffc8c5ffff30c6ffff8cc6ffffa8c9ffff0ecaffff9e500000
+      m_SelectedIDs: 3232ffff
+      m_LastClickedID: -52686
+      m_ExpandedIDs: 5a24ffffe62fffff4a32ffff2433ffffe642ffff7046ffff9068fffff872ffff1c73ffff5a73ffff4cbdffff3ac8ffff5ec8ffff00cbffff9c500000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -457,9 +457,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.6239452, y: 2.2110405, z: -2.3275776}
+    m_Target: {x: 5.531028, y: -11.232856, z: 3.1973705}
     speed: 2
-    m_Value: {x: -1.6239452, y: 2.2110405, z: -2.3275776}
+    m_Value: {x: 5.531028, y: -11.232856, z: 3.1973705}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -505,13 +505,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.32254788, y: -0.021013735, z: 0.0071613006, w: -0.94630015}
+    m_Target: {x: -0.33673635, y: -0.016667796, z: 0.0059599397, w: -0.9414416}
     speed: 2
-    m_Value: {x: -0.32254565, y: -0.02101359, z: 0.0071612513, w: -0.9462936}
+    m_Value: {x: -0.3367335, y: -0.016667655, z: 0.0059598894, w: -0.9414336}
   m_Size:
-    m_Target: 13.961314
+    m_Target: 19.236734
     speed: 2
-    m_Value: 13.961314
+    m_Value: 19.236734
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -601,20 +601,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\quinn\Documents\Courses\CS4483B\LogChamp\logchamp
+  m_LastProjectPath: C:\Users\Michael\Unity Games\Git\logchamp
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d25b0000
-    m_LastClickedID: 23506
-    m_ExpandedIDs: 00000000bc5b0000be5b0000c05b0000c25b0000c45b000000ca9a3b
+    m_SelectedIDs: 2c5e0000
+    m_LastClickedID: 24108
+    m_ExpandedIDs: 000000002c5e00002e5e0000305e0000325e0000345e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -642,7 +642,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000bc5b0000be5b0000c05b0000c25b0000c45b0000
+    m_ExpandedIDs: 000000002c5e00002e5e0000305e0000325e0000345e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

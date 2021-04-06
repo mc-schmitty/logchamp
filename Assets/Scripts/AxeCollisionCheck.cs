@@ -39,6 +39,7 @@ public class AxeCollisionCheck : MonoBehaviour
                     lineDraw.SetPosition(0, treeCollider.transform.position);
                     lineDraw.SetPosition(1, treeCollider.transform.position + lineOffset);
                 }
+                // Draw line from incoming log
                 else if(drawLine) {
                     drawLine = false;       // Only deals with the first collision
                     Vector3 lineOffset = treeCollider.transform.position - transform.position;
@@ -73,7 +74,7 @@ public class AxeCollisionCheck : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && axeCooldown == 0) {
             axeKeyBuffer = 7;
-            axeCooldown = 90;
+            axeCooldown = 60;
             GetComponentInChildren<PlayermodelManager>().SwingAxe();
         }
     }

@@ -9,7 +9,7 @@ public class HammerManager : MonoBehaviour
     int maxCabin;
     private bool isUpgrade = false;
     GameObject prevObj = null;
-    public WinCon winObject;
+    [SerializeField] private BossScript bossObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +36,7 @@ public class HammerManager : MonoBehaviour
             //Cabin is built! Tell the level win con object.
             if (hammerVersion == maxCabin)
             {
-                winObject.CabinBuilt();
+                bossObject.HammerBuilt();
             }
         }
     }
@@ -50,5 +50,10 @@ public class HammerManager : MonoBehaviour
         //Vector3 pos = transform.position;
         //transform.position.Set(pos.x, pos.y+6, pos.z);
         transform.Translate(0, 6, 0);
+    }
+
+    // Slam the hammer
+    public void Slammer() {
+        
     }
 }

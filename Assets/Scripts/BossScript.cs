@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossScript : MonoBehaviour
 {
     private int frame;
+    [SerializeField] private int hammers;
     [SerializeField] Rigidbody player;
     [SerializeField] GameObject poordude;
     [SerializeField] Rigidbody logperatve;
@@ -27,6 +28,13 @@ public class BossScript : MonoBehaviour
         frame++;
     }
 
+    public void HammerBuilt() {
+        hammers--;
+        if(hammers == 0) {
+            
+        }
+    }
+
     // Manages timed events, basically bootleg timeline 
     private void ActivateTiming()
     {
@@ -47,19 +55,19 @@ public class BossScript : MonoBehaviour
                 GameObject.Destroy(poordude);
                 print("Killed blue guy");
                 break;
-            case 641:
+            case 590:
                 logperatve.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
                 print("Log Operative Unleashed");
                 break;
-            case 800:
+            case 730:
                 GetComponentInChildren<Conveyor>().activate();
                 print("Start extending the conveyor");
                 break;
-            case 960:
+            case 760:
                 player.constraints = RigidbodyConstraints.FreezeRotation;
                 print("Unfroze Player");
                 break;
-            case 1020:
+            case 1000:
                 HammerManager[] h = GetComponentsInChildren<HammerManager>();
                 for(int n = 0; n < h.Length; n++){
                     h[n].raiseUp();

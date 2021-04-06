@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7679873904546300044}
   - component: {fileID: 4278131154715663110}
   m_Layer: 9
-  m_Name: Log
+  m_Name: Boss_Log
   m_TagString: Launchable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!114 &7679873904546300044
 MonoBehaviour:

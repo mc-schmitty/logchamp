@@ -35,7 +35,7 @@ public class PlayermodelManager : MonoBehaviour
         }
         else if(transform.rotation.eulerAngles.y >= 232 ) {
             print(transform.rotation.eulerAngles.y);
-            transform.Rotate(0, 1.5f, 0);
+            transform.Rotate(0, 1.8f, 0);
         }
     }
 

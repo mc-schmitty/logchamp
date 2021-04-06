@@ -29,12 +29,12 @@ public class PlayermodelManager : MonoBehaviour
             //isSwing = false;
 
             // Check if past rotation
-            print(transform.rotation.eulerAngles.y);
+            //print(transform.rotation.eulerAngles.y);
             if(transform.rotation.eulerAngles.y <= 240)
                 isSwing = false;
         }
         else if(transform.rotation.eulerAngles.y >= 232 ) {
-            print(transform.rotation.eulerAngles.y);
+            //print(transform.rotation.eulerAngles.y);
             transform.Rotate(0, 1.8f, 0);
         }
     }

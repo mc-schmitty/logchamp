@@ -31,7 +31,12 @@ public class BossScript : MonoBehaviour
     public void HammerBuilt() {
         hammers--;
         if(hammers == 0) {
-            
+            HammerManager[] hList = GetComponentsInChildren<HammerManager>();
+            for(int n=0; n < hList.Length; n++) {
+                print("Slammed!!!!");
+                hList[n].Slammer();
+            }
+            logperatve.AddForce(new Vector3(0, 10, 3), ForceMode.VelocityChange);
         }
     }
 

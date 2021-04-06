@@ -6,6 +6,7 @@ public class TruckBehaviour : MonoBehaviour
 {
     [SerializeField] private bool isCrashed;
     [SerializeField] private float speed;
+    [SerializeField] private GameObject killer;
 
     AudioSource[] truckSounds;
 
@@ -52,6 +53,7 @@ public class TruckBehaviour : MonoBehaviour
         //Vector3 pos = transform.position;
         //transform.position.Set(pos.x, (pos.y)-6, pos.z);
         transform.Translate(0, -6f, 0);
+        killer.transform.Translate(0, 0, -0.2f);
         
     }
 }

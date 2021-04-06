@@ -21,7 +21,7 @@ public class Conveyor : MonoBehaviour
     {
         nextNode = 0;
         activated = false;
-        shootCooldown = 120;
+        shootCooldown = 130;
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class Conveyor : MonoBehaviour
             return;
         
         if(shootCooldown == 0){
-            float randResult = Random.value - 0.7f;
+            float randResult = Random.value;
             Ready(nextNode, randResult);
             if(nextNode < nodes.Length-1)
                 nextNode++;
@@ -57,21 +57,29 @@ public class Conveyor : MonoBehaviour
 
         Shoot();
 
-        if(logType > 0.5)
+        if(logType > 0.7) {
             // Create new log at end of queue
             queueLog = Instantiate(bombLog, pos, transform.rotation);
             queueDir = (nodes[index].transform.position - pos);
             queueDir.y = 0;
             queueDir = queueDir.normalized * launchSpeed;
-        
-        shootCooldown = 90;
+        }
+        else {
+            queueLog = Instantiate(regLog, pos, transform.rotation);
+            queueDir = (nodes[index].transform.position - pos);
+            queueDir.y = 0;
+            queueDir = queueDir.normalized * launchSpeed;
+        }
+        shootCooldown = 160;
     }
 
     private void Shoot() {
         if(readyLog != null) {
             Rigidbody r = readyLog.GetComponent<Rigidbody>();
-            r.constraints = RigidbodyConstraints.FreezePositionY;
+            r.transform.Translate(-4, -2, -4);
+            print("log ready to shoot" + readyDir);
             r.AddForce(readyDir, ForceMode.VelocityChange);
+            r.constraints = RigidbodyConstraints.FreezePositionY;
             r.AddTorque(Vector3.Cross(Vector3.up, readyDir), ForceMode.VelocityChange);
 
         }

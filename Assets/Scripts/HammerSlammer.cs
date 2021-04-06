@@ -20,6 +20,6 @@ public class HammerSlammer : MonoBehaviour
 
     public void Slammer(){
         float dir = transform.position.x;
-        hammerhead.AddForce(new Vector3(-dir, 10, 0)*1000, ForceMode.Force);
+        hammerhead.AddForce(new Vector3(dir, 0, 0)*100000, ForceMode.Force);
     }
 }

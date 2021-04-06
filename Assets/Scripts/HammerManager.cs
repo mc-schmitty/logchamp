@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -54,6 +54,6 @@ public class HammerManager : MonoBehaviour
 
     // Slam the hammer
     public void Slammer() {
-        
+        GetComponentInChildren<HammerSlammer>().Slammer();
     }
 }

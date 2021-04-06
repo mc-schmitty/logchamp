@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 1170361295808135897}
   - component: {fileID: 712667142077393653}
   - component: {fileID: 8674189091019880959}
+  - component: {fileID: 4983248875584571972}
   m_Layer: 0
   m_Name: Hammer_Complete
   m_TagString: Untagged
@@ -274,6 +275,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4983248875584571972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708190429144931588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab0498a019027914c8cb78f9a2940a17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hammerhead: {fileID: 1946667185472368588}
 --- !u!1 &2341672722678730774
 GameObject:
   m_ObjectHideFlags: 0

@@ -75,7 +75,7 @@ public class BossScript : MonoBehaviour
                 print("Hammers Raised");
                 break;
             default:
-                print(frame);
+                //print(frame);
                 break;      // Break not needed but now its not red so
         }
     }

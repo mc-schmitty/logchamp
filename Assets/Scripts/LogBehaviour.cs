@@ -35,7 +35,9 @@ public class LogBehaviour : MonoBehaviour
         //Debug.Log("colliding");
         if(treeCollider.CompareTag("Launchable")) {
             //treeCollider.GetComponent<LogBehaviour>().AxeHit(rigidBodyComponent);
-            AxeHit(treeCollider.GetComponent<Rigidbody>());
+            Rigidbody body = treeCollider.GetComponent<Rigidbody>();
+            if(body != null)
+                AxeHit(body);
         }
         else if(treeCollider.CompareTag("Cabin")) {
             Destroy(gameObject);
@@ -45,7 +47,7 @@ public class LogBehaviour : MonoBehaviour
     void FixedUpdate()
     {
         if(rigidBodyComponent.constraints != RigidbodyConstraints.FreezeAll && rigidBodyComponent.velocity.magnitude < 3.5f) {
-            print("AFK log destroyed");
+            //print("AFK log destroyed");
             if(imdumb)
                 Destroy(gameObject);
         }
@@ -91,6 +93,7 @@ public class LogBehaviour : MonoBehaviour
 
             if(otherBody.CompareTag("Player")) {
                 rigidBodyComponent.velocity = new Vector3(rigidBodyComponent.velocity.x, 0, -(rigidBodyComponent.velocity.z)) * ReflectSpeed;
+                imdumb = true;
                 // reflect now same as launch
                 //Vector3 launchForceVec = rigidBodyComponent.position - AxeHitPosition;
                 //launchForceVec.y = 0;
@@ -98,7 +101,7 @@ public class LogBehaviour : MonoBehaviour
                 
             }
             else if(rigidBodyComponent.constraints != RigidbodyConstraints.FreezeAll) {
-                print("Death by low health");
+                //print("Death by low health");
                 Destroy(gameObject);
             }
             else {

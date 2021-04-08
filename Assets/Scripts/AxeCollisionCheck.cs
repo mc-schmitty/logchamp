@@ -29,25 +29,28 @@ public class AxeCollisionCheck : MonoBehaviour
             LogBehaviour checkLog = treeCollider.GetComponent<LogBehaviour>();
             if(checkLog) {
                 // Draw line from tree
-                if(checkLog.health > 0 && drawLine) {
-                    drawLine = false;       // Only deals with the first collision
-                    //Vector3 tempV = new Vector3(3*(treeCollider.transform.position.x - transform.position.x) + transform.position.x, transform.position.y, 3*(treeCollider.transform.position.z - transform.position.z) + transform.position.z);
-                    Vector3 lineOffset = treeCollider.transform.position - transform.position;
-                    lineOffset.y = 0;
-                    lineOffset = lineOffset.normalized * AimLineLength;
+                if(drawLine) {
+                    if(checkLog.health > 0) {
+                        drawLine = false;       // Only deals with the first collision
+                        //Vector3 tempV = new Vector3(3*(treeCollider.transform.position.x - transform.position.x) + transform.position.x, transform.position.y, 3*(treeCollider.transform.position.z - transform.position.z) + transform.position.z);
+                        Vector3 lineOffset = treeCollider.transform.position - transform.position;
+                        lineOffset.y = 0;
+                        lineOffset = lineOffset.normalized * AimLineLength;
 
-                    lineDraw.SetPosition(0, treeCollider.transform.position);
-                    lineDraw.SetPosition(1, treeCollider.transform.position + lineOffset);
-                }
-                // Draw line from incoming log
-                else if(drawLine) {
-                    drawLine = false;       // Only deals with the first collision
-                    Vector3 lineOffset = treeCollider.transform.position - transform.position;
-                    lineOffset.y = 0;
-                    lineOffset = lineOffset.normalized * AimLineLength;
+                        lineDraw.SetPosition(0, treeCollider.transform.position);
+                        lineDraw.SetPosition(1, treeCollider.transform.position + lineOffset);
+                    }
+                    // Draw reflection line from incoming log
+                    else if(axeCooldown == 0) {
+                        drawLine = false;       // Only deals with the first collision
+                        Vector3 lineOffset = treeCollider.GetComponent<Rigidbody>().velocity;
+                        lineOffset.y = 0;
+                        lineOffset.z *= -1; 
+                        lineOffset = lineOffset.normalized * AimLineLength;
 
-                    lineDraw.SetPosition(0, treeCollider.transform.position);
-                    lineDraw.SetPosition(1, treeCollider.transform.position + lineOffset);
+                        lineDraw.SetPosition(0, treeCollider.transform.position);
+                        lineDraw.SetPosition(1, treeCollider.transform.position + lineOffset);
+                    }
                 }
                 if(axeKeyBuffer > 0) {  // Launch log
                     checkLog.AxeHit(rigidbodyComponent);

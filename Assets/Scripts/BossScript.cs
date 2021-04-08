@@ -36,7 +36,11 @@ public class BossScript : MonoBehaviour
                 print("Slammed!!!!");
                 hList[n].Slammer();
             }
-            logperatve.AddForce(new Vector3(0, 10, 3), ForceMode.VelocityChange);
+            GetComponentInChildren<Conveyor>().deactivate();
+            Vector3 hitV = new Vector3(12, 10, 3);
+            logperatve.constraints = RigidbodyConstraints.None;
+            logperatve.AddForce(hitV, ForceMode.VelocityChange);
+            logperatve.AddTorque(hitV, ForceMode.Force);
         }
     }
 

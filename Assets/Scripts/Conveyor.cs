@@ -11,6 +11,7 @@ public class Conveyor : MonoBehaviour
     [SerializeField] private GameObject regLog;
     [SerializeField] private GameObject bombLog;
     [SerializeField] private float launchSpeed;
+    [SerializeField] private Transform logperativePos;
     private Vector3 queueDir;
     private GameObject queueLog = null;
     private Vector3 readyDir;
@@ -51,6 +52,13 @@ public class Conveyor : MonoBehaviour
         activated = true;
     }
 
+    public void deactivate() {
+        transform.Translate(-4, 0, 0);
+        activated = false;
+        GameObject.Destroy(queueLog);
+        GameObject.Destroy(readyLog);
+    }
+
     private void Ready(int index, float logType) {
         Vector3 pos = transform.position;
         pos.Set(pos.x, pos.y+2, pos.z);
@@ -76,7 +84,7 @@ public class Conveyor : MonoBehaviour
     private void Shoot() {
         if(readyLog != null) {
             Rigidbody r = readyLog.GetComponent<Rigidbody>();
-            r.transform.Translate(-4, -2, -4);
+            r.transform.Translate(-4, -1, -4);
             print("log ready to shoot" + readyDir);
             r.AddForce(readyDir, ForceMode.VelocityChange);
             r.constraints = RigidbodyConstraints.FreezePositionY;
@@ -87,7 +95,8 @@ public class Conveyor : MonoBehaviour
         if(queueLog != null) {
             readyLog = queueLog;
             readyDir = queueDir;
-            readyLog.transform.Translate(3, 0, 0);
+            readyLog.transform.Translate(3, -1.5f, 0);
+            logperativePos.rotation = Quaternion.FromToRotation(new Vector3(0,0,-1), readyDir);
         }
     }
 }

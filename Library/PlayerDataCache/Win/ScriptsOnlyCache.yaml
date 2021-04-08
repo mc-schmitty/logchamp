@@ -1719,4 +1719,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/TargetPractice.unity
   - Assets/Scenes/Timed_cabin.unity
   - Assets/Scenes/Bossfight_resouces.unity
-  playerPath: C:/Users/Michael/Unity Games/Git/logchamp/Builds/LogChamp_v3.1/LogChamp.exe
+  playerPath: C:/Users/Michael/Unity Games/Git/logchamp/Builds/LogChamp_v3.2/LogChamp.exe
